@@ -1,31 +1,26 @@
 {% set name = "email_validator" %}
-{% set version = "1.0.2" %}
-{% set bundle = "tar.gz" %}
-{% set hash_type = "sha256" %}
-{% set hash = "669eaae98d86dbd0ab62ab2f5fbc95d01cb28f8e038aa30ab165b244130949c9" %}
-{% set build = 1 %}
+{% set version = "1.0.5" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.{{ bundle }}
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}
-  {{ hash_type }}: {{ hash }}
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 669eaae98d86dbd0ab62ab2f5fbc95d01cb28f8e038aa30ab165b244130949c9
 
 build:
   noarch: python
-  number: {{ build }}
-  script: python setup.py install --single-version-externally-managed --record=record.txt
+  number: 0
+  script: python -m pip install --no-deps --ignore-installed 
 
   entry_points:
     - email_validator = email_validator:main
 
 requirements:
-  build:
+  host:
     - python
-    - setuptools
+    - pip
 
   run:
     - python
@@ -42,9 +37,9 @@ test:
 about:
   home: https://github.com/JoshData/python-email-validator
   license_file: LICENSE
-  license: CC0
-  license_family: OTHER
-  summary: 'A robust email syntax and deliverability validation library for Python 2.x/3.x.'
+  license: CC0-1.0
+  license_family: CC
+  summary: A robust email syntax and deliverability validation library for Python 2.x/3.x.
   dev_url: https://github.com/JoshData/python-email-validator
   doc_url: https://github.com/JoshData/python-email-validator
 
