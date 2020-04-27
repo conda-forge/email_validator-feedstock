@@ -6,8 +6,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 669eaae98d86dbd0ab62ab2f5fbc95d01cb28f8e038aa30ab165b244130949c9
+  url: https://github.com/JoshData/python-email-validator/archive/v{{ version }}.tar.gz
+  sha256: a46f57df30d98ddecb74568588161bc0c311fe604b4c11810d4567f0dacdd93e
 
 build:
   noarch: python
