@@ -3,7 +3,7 @@
 {% set bundle = "tar.gz" %}
 {% set hash_type = "sha256" %}
 {% set hash = "669eaae98d86dbd0ab62ab2f5fbc95d01cb28f8e038aa30ab165b244130949c9" %}
-{% set build = 0 %}
+{% set build = 1 %}
 
 package:
   name: {{ name|lower }}
@@ -51,3 +51,4 @@ about:
 extra:
   recipe-maintainers:
     - pmlandwehr
+    - xylar
