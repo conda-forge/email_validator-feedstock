@@ -3,7 +3,7 @@ About email_validator
 
 Home: https://github.com/JoshData/python-email-validator
 
-Package license: CC0
+Package license: CC0-1.0
 
 Feedstock license: BSD 3-Clause
 
