@@ -31,6 +31,7 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-email--validator-green.svg)](https://anaconda.org/conda-forge/email-validator) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/email-validator.svg)](https://anaconda.org/conda-forge/email-validator) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/email-validator.svg)](https://anaconda.org/conda-forge/email-validator) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/email-validator.svg)](https://anaconda.org/conda-forge/email-validator) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-email_validator-green.svg)](https://anaconda.org/conda-forge/email_validator) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/email_validator.svg)](https://anaconda.org/conda-forge/email_validator) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/email_validator.svg)](https://anaconda.org/conda-forge/email_validator) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/email_validator.svg)](https://anaconda.org/conda-forge/email_validator) |
 
 Installing email_validator
@@ -42,16 +43,16 @@ Installing `email_validator` from the `conda-forge` channel can be achieved by a
 conda config --add channels conda-forge
 ```
 
-Once the `conda-forge` channel has been enabled, `email_validator` can be installed with:
+Once the `conda-forge` channel has been enabled, `email-validator, email_validator` can be installed with:
 
 ```
-conda install email_validator
+conda install email-validator email_validator
 ```
 
-It is possible to list all of the versions of `email_validator` available on your platform with:
+It is possible to list all of the versions of `email-validator` available on your platform with:
 
 ```
-conda search email_validator --channel conda-forge
+conda search email-validator --channel conda-forge
 ```
 
 
