@@ -10,29 +10,46 @@ source:
   sha256: 01498d84bd576c449e476a49aa70722a9aaf2a3b00957d53ddb2f3bec04b0855
 
 build:
-  noarch: python
-  number: 0
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  number: 1
 
-  entry_points:
-    - email_validator = email_validator:main
+outputs:
+  - name: email_validator
+    build:
+      script: {{ PYTHON }} -m pip install . --no-deps -vv
+      noarch: python
+      entry_points:
+        - email_validator = email_validator:main
 
-requirements:
-  host:
-    - python >=3.5
-    - pip
+    requirements:
+      host:
+        - python >=3.5
+        - pip
 
-  run:
-    - python >=3.5
-    - idna >=2.0.0
-    - dnspython >=1.15.0
+      run:
+        - python >=3.5
+        - idna >=2.0.0
+        - dnspython >=1.15.0
 
-test:
-  imports:
-    - email_validator
+    test:
+      imports:
+        - email_validator
 
-  commands:
-    - email_validator --help
+      commands:
+        - email_validator --help
+
+  - name: email-validator
+    build:
+      noarch: generic
+
+    requirements:
+      run:
+        - {{ pin_subpackage('email_validator', max_pin="x.x.x") }}
+    test:
+      imports:
+        - email_validator
+
+      commands:
+        - email_validator --help
 
 about:
   home: https://github.com/JoshData/python-email-validator
